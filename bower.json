@@ -1,0 +1,17 @@
+{
+  "name": "js-concurrency",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ekweible/js-concurrency",
+  "authors": [
+    "Evan.Weible <ekweible@gmail.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "private": true,
+  "devDependencies": {
+    "bootstrap": "3.1.1",
+    "SyntaxHighlighter": "git+ssh://git@github.com/alexgorbatchev/SyntaxHighlighter.git#3.0.9",
+    "xregexp": "2.0.0"
+  }
+}

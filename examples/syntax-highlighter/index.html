@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="static/sh/css/shCore.css">
+    <link rel="stylesheet" href="static/sh/css/shThemeDefault.css">
+    <link rel="stylesheet" href="ide.css">
+
+    <script src="static/xregexp/xregexp.js"></script>
+    <script src="static/sh/js/shCore.js"></script>
+    <script src="static/sh/js/shBrushJScript.js"></script>
+    <script src="static/jquery/jquery.js"></script>
+
+    <script src="sleep.js"></script>
+    <script src="workers.js"></script>
+    <script src="ide.js"></script>
+    <script src="numWorkers.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Online IDE with Web Workers</a>
+            </div>
+
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input id="use-workers" type="checkbox" checked>
+                            Use Web Workers
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    &nbsp; &nbsp;
+                    <select id="num-workers" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option selected>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <textarea id="editor"></textarea>
+    <div id="preview"></div>
+
+</body>
+</html>

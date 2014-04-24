@@ -1,0 +1,23 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+#editor, #preview {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+#editor {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    resize: none;
+    outline: none;
+}
+
+#preview {
+    border-left: 1px solid #aaa;
+    overflow-y: scroll;
+}

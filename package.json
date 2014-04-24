@@ -1,0 +1,19 @@
+{
+  "name": "js-concurrency",
+  "version": "0.0.0",
+  "description": "Concurrency in JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ekweible/js-concurrency.git"
+  },
+  "author": "Evan Weible <ekweible@gmail.com>",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ekweible/js-concurrency/issues"
+  },
+  "devDependencies": {
+    "grunt": "0.4.4",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-copy": "0.5.0"
+  }
+}

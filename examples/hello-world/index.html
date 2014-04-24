@@ -1,0 +1,11 @@
+<script>
+var worker = new Worker('worker.js');
+
+// listen for the worker's responses
+worker.addEventListener('message', function(evt) {
+    document.write(evt.data);
+});
+
+// send a message to the worker
+worker.postMessage('Hello?');
+</script>
