@@ -3,7 +3,7 @@ Concurrency in JavaScript
 
 This repository features explorations into the utilization of
 [Web Workers](https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers)
-to achieve concurrency in JavaScript. Feel free to browse the [examples](tree/master/examples).
+to achieve concurrency in JavaScript. Feel free to browse the [examples](examples).
 
 If you would like to view the examples as live demos, they are hosted at the following link:
 
