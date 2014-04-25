@@ -1,7 +1,7 @@
 function sleep(milliseconds) {
-    var start = new Date().getTime();
+    var start = Date.now();
     for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds){
+        if ((Date.now() - start) > milliseconds){
             break;
         }
     }

@@ -18,14 +18,14 @@ self.addEventListener('message', function(evt) {
             // run the syntax highlighter on it
             var highlighted = SyntaxHighlighter.highlight(contents);
 
-            sleep(500);
+            sleep(350);
 
             // send the finished result back to the main thread
             self.postMessage({
                 id: id,
                 contents: highlighted,
                 time: evt.data.time,
-                duration: new Date().getTime() - evt.data.time
+                duration: Date.now() - evt.data.time
             });
     }
 });

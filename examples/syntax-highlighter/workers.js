@@ -45,20 +45,20 @@ window.dispatchSyntaxHighlighter = function(contents) {
         workerPool[workerID].worker.postMessage({
             action: 'highlight',
             contents: contents,
-            time: new Date().getTime()
+            time: Date.now()
         });
 
         console.log('\tDispatching Worker #' + workerID + '. Current load: ' + workerPool[workerID].load);
     }
     // otherwise, perform the task synchronously
     else {
-        var start = new Date().getTime();
+        var start = Date.now();
         // run the syntax highlighter on it
         var highlighted = SyntaxHighlighter.highlight(contents);
-        sleep(500);
+        sleep(350);
         window.updateIDEPreview(highlighted);
 
-        console.log('[' + (new Date().getTime() - start) + 'ms] Synchronous task finished.');
+        console.log('[' + (Date.now() - start) + 'ms] Synchronous task finished.');
     }
 };
 
