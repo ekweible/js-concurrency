@@ -1,0 +1,57 @@
+<script>
+
+// create a worker that transfers by structured cloning
+var cloneWorker = new Worker('cloneWorker.js');
+// create a worker that transfers using transferables
+var transferableWorker = new Worker('transferableWorker.js');
+
+// add handlers for responses from the workers
+cloneWorker.addEventListener('message', handleResponse);
+transferableWorker.addEventListener('message', handleResponse);
+
+function createLargeObject() {
+    var ARRAY_SIZE = 256; // 256mb
+
+    // capture time before memory allocation
+    var start = Date.now();
+
+    // Create and fill an array
+    var largeObject = new Uint8Array(ARRAY_SIZE * 1024 * 1024);
+    for (var i=0; i<largeObject.length; i++) {
+        largeObject[i] = i;
+    }
+
+    // log time for memory allocation
+    console.log('Took ' + (Date.now() - start) + 'ms to fill the ' + ARRAY_SIZE + 'mb array.');
+
+    return largeObject;
+}
+
+function sendClone() {
+    var largeObject = createLargeObject();
+    var payload = {
+        obj: largeObject,
+        time: Date.now()
+    };
+    cloneWorker.postMessage(payload);
+}
+
+function sendTransferable() {
+    var largeObject = createLargeObject();
+    var payload = {
+        obj: largeObject,
+        time: Date.now()
+    };
+    transferableWorker.postMessage(payload, [largeObject.buffer]);
+}
+
+function handleResponse(evt) {
+    console.log('Transfer from main thread to worker: ' + (evt.data.duration) + 'ms');
+    console.log('Transfer from worker to main thread: ' + (Date.now() - evt.data.time) + 'ms');
+    console.log('Large object size: ' + evt.data.obj.buffer.byteLength + ' bytes\n\n');
+}
+
+</script>
+
+<button onclick="sendClone()">Send Data via Structured Cloning</button>
+<button onclick="sendTransferable()">Send Data via Transferables</button>
